@@ -19,4 +19,5 @@ return require('packer').startup(function(use)
   use {'nvim-telescope/telescope.nvim', tag = '0.1.1', requires = { {'nvim-lua/plenary.nvim'} }}
   use 'morhetz/gruvbox'
   use {"windwp/nvim-autopairs", config = function() require("nvim-autopairs").setup {} end}
+  use "tiagovla/scope.nvim"  
   end)

@@ -31,6 +31,7 @@ require("nvterm").setup({
 -- bufferline
 vim.opt.termguicolors = true
 require("bufferline").setup{}
+require("scope").setup()
 
 -- nvim lsp start
 -- Add additional capabilities supported by nvim-cmp
