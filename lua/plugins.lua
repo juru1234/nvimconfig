@@ -9,15 +9,15 @@ return require('packer').startup(function(use)
   use 'neovim/nvim-lspconfig'
   use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
   use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
-  use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
-  use 'L3MON4D3/LuaSnip' -- Snippets plugin
-  use 'prabirshrestha/async.vim'
-  use 'prabirshrestha/asyncomplete.vim'
-  use 'prabirshrestha/asyncomplete-lsp.vim'
-  use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
-  use 'morhetz/gruvbox'
+  use 'saadparwaiz1/cmp_luasnip' -- LuaSnip for nvim-cmp
+  use 'L3MON4D3/LuaSnip' -- LuaSnip plugin
+  use 'prabirshrestha/async.vim' -- LSP
+  use 'prabirshrestha/asyncomplete.vim' -- LSP
+  use 'prabirshrestha/asyncomplete-lsp.vim' -- LSP
+  use {'akinsho/bufferline.nvim', requires = 'nvim-tree/nvim-web-devicons'} -- Tab bar
+  use 'morhetz/gruvbox' -- Theme
   use {"windwp/nvim-autopairs", config = function() require("nvim-autopairs").setup {} end}
+  use 'j-hui/fidget.nvim' -- Show LSP info bottom right
+  use {'nvim-telescope/telescope.nvim', requires = {{'nvim-lua/plenary.nvim'}}}
   use {'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true }}
-  use {'junegunn/fzf.vim', requires = { 'junegunn/fzf', run = ':call fzf#install()' }}
-
   end)
