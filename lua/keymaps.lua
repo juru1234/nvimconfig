@@ -64,11 +64,6 @@ map('t', '<C-j>', '<C-\\><C-n><C-w>j')
 map('t', '<C-k>', '<C-\\><C-n><C-w>k')
 map('t', '<C-l>', '<C-\\><C-n><C-w>l')
 
-
--- nvterm
-vim.keymap.set('n', '<A-v>', function() require("nvterm.terminal").toggle "vertical" end)
-vim.keymap.set('n', '<A-h>', function() require("nvterm.terminal").toggle "horizontal" end)
-
 -- bufferline
 vim.keymap.set('n', '<Tab>', '<CMD>BufferLineCycleNext<CR>')
 
@@ -122,9 +117,4 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
--- telescope
-local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
-vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+

@@ -1,37 +1,9 @@
 require('plugins')
 require('keymaps')
 
-require("nvterm").setup({
-  terminals = {
-    shell = zsh,
-    list = {},
-    type_opts = {
-      float = {
-        relative = 'editor',
-        row = 0.3,
-        col = 0.25,
-        width = 0.5,
-        height = 0.4,
-        border = "single",
-      },
-      horizontal = { location = "rightbelow", split_ratio = .3, },
-      vertical = { location = "rightbelow", split_ratio = .5 },
-    }
-  },
-  behavior = {
-    autoclose_on_quit = {
-      enabled = false,
-      confirm = true,
-    },
-    close_on_exit = true,
-    auto_insert = true,
-  },
-})
-
 -- bufferline
 vim.opt.termguicolors = true
 require("bufferline").setup{}
-require("scope").setup()
 
 -- nvim lsp start
 -- Add additional capabilities supported by nvim-cmp
@@ -99,6 +71,10 @@ require('nvim-autopairs').setup({
   disable_filetype = { "TelescopePrompt" , "vim" },
 })
 
+require('lualine').setup {}
+
 vim.cmd('set shell=/usr/bin/zsh')
 vim.cmd('colorscheme gruvbox')
 vim.cmd('set clipboard+=unnamedplus')
+vim.wo.number = true
+vim.wo.relativenumber = true

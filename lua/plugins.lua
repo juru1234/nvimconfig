@@ -11,13 +11,13 @@ return require('packer').startup(function(use)
   use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
   use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
   use 'L3MON4D3/LuaSnip' -- Snippets plugin
-  use { "NvChad/nvterm", config = function () require("nvterm").setup() end,}
   use 'prabirshrestha/async.vim'
   use 'prabirshrestha/asyncomplete.vim'
   use 'prabirshrestha/asyncomplete-lsp.vim'
   use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
-  use {'nvim-telescope/telescope.nvim', tag = '0.1.1', requires = { {'nvim-lua/plenary.nvim'} }}
   use 'morhetz/gruvbox'
   use {"windwp/nvim-autopairs", config = function() require("nvim-autopairs").setup {} end}
-  use "tiagovla/scope.nvim"  
+  use {'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true }}
+  use {'junegunn/fzf.vim', requires = { 'junegunn/fzf', run = ':call fzf#install()' }}
+
   end)
