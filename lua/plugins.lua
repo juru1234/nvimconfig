@@ -10,7 +10,7 @@ return require('packer').startup(function(use)
   use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
   use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
   use 'saadparwaiz1/cmp_luasnip' -- LuaSnip for nvim-cmp
-  use 'L3MON4D3/LuaSnip' -- LuaSnip plugin
+  use 'L3MON4D3/LuaSnip' -- LuaSnip plugin (used by cmp)
   use {'akinsho/bufferline.nvim', requires = 'nvim-tree/nvim-web-devicons'} -- Tab bar
   use 'morhetz/gruvbox' -- Theme
   use {"windwp/nvim-autopairs", config = function() require("nvim-autopairs").setup {} end}
@@ -18,4 +18,5 @@ return require('packer').startup(function(use)
   use {'nvim-telescope/telescope.nvim', requires = {{'nvim-lua/plenary.nvim'}}}
   use {'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true }}
   use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+  use 'nvim-tree/nvim-tree.lua'
   end)

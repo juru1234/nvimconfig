@@ -122,6 +122,8 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 
+require("nvim-tree").setup()
+
 vim.cmd('set shell=/usr/bin/zsh')
 vim.cmd('colorscheme gruvbox')
 vim.cmd('set clipboard+=unnamedplus')
