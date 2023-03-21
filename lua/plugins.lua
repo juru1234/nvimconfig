@@ -17,4 +17,5 @@ return require('packer').startup(function(use)
   use 'j-hui/fidget.nvim' -- Show LSP info bottom right
   use {'nvim-telescope/telescope.nvim', requires = {{'nvim-lua/plenary.nvim'}}}
   use {'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true }}
+  use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
   end)

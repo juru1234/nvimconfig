@@ -20,7 +20,7 @@ for _, lsp in ipairs(servers) do
   }
 end
 
--- luasnip setup
+-- luasnip (used by nvim-cmp)
 local luasnip = require 'luasnip'
 
 -- nvim-cmp setup
@@ -114,6 +114,13 @@ require('lualine').setup {
 -- end lualine
 
 require"fidget".setup{}
+
+require'nvim-treesitter.configs'.setup {
+  highlight = {
+    enable = true,
+    additional_vim_regex_highlighting = false,
+  },
+}
 
 vim.cmd('set shell=/usr/bin/zsh')
 vim.cmd('colorscheme gruvbox')
