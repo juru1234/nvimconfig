@@ -11,9 +11,6 @@ return require('packer').startup(function(use)
   use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
   use 'saadparwaiz1/cmp_luasnip' -- LuaSnip for nvim-cmp
   use 'L3MON4D3/LuaSnip' -- LuaSnip plugin
-  use 'prabirshrestha/async.vim' -- LSP
-  use 'prabirshrestha/asyncomplete.vim' -- LSP
-  use 'prabirshrestha/asyncomplete-lsp.vim' -- LSP
   use {'akinsho/bufferline.nvim', requires = 'nvim-tree/nvim-web-devicons'} -- Tab bar
   use 'morhetz/gruvbox' -- Theme
   use {"windwp/nvim-autopairs", config = function() require("nvim-autopairs").setup {} end}
