@@ -115,14 +115,16 @@ require('lualine').setup {
 
 require"fidget".setup{}
 
-require'nvim-treesitter.configs'.setup {
-  highlight = {
-    enable = true,
-    additional_vim_regex_highlighting = false,
-  },
-}
-
 require("nvim-tree").setup()
+
+require("nvim-treesitter.configs").setup({
+    ensure_installed = { "javascript", "typescript", "lua", "vim", "json", "html", "rust", "tsx" },
+    sync_install = false,
+    auto_install = true,
+    highlight = {
+        enable = true,
+    },
+})
 
 vim.cmd('set shell=/usr/bin/zsh')
 vim.cmd('colorscheme gruvbox')
