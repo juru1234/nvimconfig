@@ -1,24 +1,25 @@
--- This file can be loaded by calling `lua require('plugins')` from your init.vim
-
--- Only required if you have packer configured as `opt`
-vim.cmd [[packadd packer.nvim]]
-
-return require('packer').startup(function(use) 
-  -- add you plugins here like:
-  use 'wbthomason/packer.nvim'
-  use 'neovim/nvim-lspconfig'
-  use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
-  use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
-  use 'saadparwaiz1/cmp_luasnip' -- LuaSnip for nvim-cmp
-  use 'L3MON4D3/LuaSnip' -- LuaSnip plugin (used by cmp)
-  use {'akinsho/bufferline.nvim', requires = 'nvim-tree/nvim-web-devicons'} -- Tab bar
-  use 'morhetz/gruvbox' -- Theme
-  use {"windwp/nvim-autopairs", config = function() require("nvim-autopairs").setup {} end}
-  use 'j-hui/fidget.nvim' -- Show LSP info bottom right
-  use {'nvim-telescope/telescope.nvim', requires = {{'nvim-lua/plenary.nvim'}}}
-  use {'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true }}
-  use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
-  use 'nvim-tree/nvim-tree.lua'
-  use 'lewis6991/gitsigns.nvim'
-  use 'dstein64/vim-startuptime'
-  end)
+vim.g.mapleader = " "
+require("lazy").setup({
+	{url = "https://github.com/neovim/nvim-lspconfig"},
+	{url = 'https://github.com/hrsh7th/nvim-cmp'}, -- Autocompletion plugin
+	{url = 'https://github.com/hrsh7th/cmp-nvim-lsp'}, -- LSP source for nvim-cmp
+	{url = 'https://github.com/L3MON4D3/LuaSnip'}, -- LuaSnip plugin (used by cmp)
+	{url = 'https://github.com/saadparwaiz1/cmp_luasnip'}, -- LuaSnip for nvim-cmp
+	{url = "https://github.com/morhetz/gruvbox"},
+	{url = "https://github.com/nvim-telescope/telescope.nvim", tag = '0.1.1',
+      		dependencies = { url = "https://github.com/nvim-lua/plenary.nvim"}},
+	{url = "https://github.com/akinsho/bufferline.nvim",
+		requires = { url = "nvim-tree/nvim-web-devicons"}},
+	{ url = 'https://github.com/nvim-lualine/lualine.nvim',
+		requires = { 'https://github.com/kyazdani42/nvim-web-devicons',
+			opt = true }},
+	{url = "https://github.com/nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
+	{url = "https://github.com/windwp/nvim-autopairs",
+		config = function() require("nvim-autopairs").setup {} end},
+	{url = "https://github.com/windwp/nvim-autopairs",
+		config = function() require("nvim-autopairs").setup {} end},
+	{url = 'https://github.com/nvim-tree/nvim-tree.lua'},
+	{url = 'https://github.com/lewis6991/gitsigns.nvim'},
+	{url = 'https://github.com/j-hui/fidget.nvim'}, -- Show LSP info bottom right
+	
+})
