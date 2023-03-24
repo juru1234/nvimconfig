@@ -150,8 +150,8 @@ vim.g.clipboard = {
 		["*"] = "xsel -i -p",
 	},
 	paste = {
-		["+"] = "xsel  -o -b",
-		["*"] = "xsel  -o -b",
+		["+"] = "xsel -o -b",
+		["*"] = "xsel -o -b",
 	},
 	cache_enabled = 1,
 }
