@@ -144,18 +144,18 @@ require('gitsigns').setup()
 vim.cmd('set shell=/usr/bin/zsh')
 vim.cmd('colorscheme gruvbox')
 vim.g.clipboard = {
- name = "xsel",
- copy = {
-  ["+"] = "xsel --nodetach -i -b",
-  ["*"] = "xsel --nodetach -i -p",
- },
- paste = {
-  ["+"] = "xsel  -o -b",
-  ["*"] = "xsel  -o -b",
- },
- cache_enabled = 1,
+	name = "xsel",
+	copy = {
+		["+"] = "xsel -i -b",
+		["*"] = "xsel -i -p",
+	},
+	paste = {
+		["+"] = "xsel  -o -b",
+		["*"] = "xsel  -o -b",
+	},
+	cache_enabled = 1,
 }
-vim.cmd('set clipboard+=unnamedplus')
+vim.opt.clipboard = "unnamedplus"
 vim.cmd('set list')
 vim.cmd('set listchars=tab:*\\ ,eol:¬,trail:~')
 vim.wo.number = true
