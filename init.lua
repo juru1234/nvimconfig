@@ -14,6 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 require('plugins')
 require('keymaps')
 
+vim.cmd('colorscheme gruvbox')
 -- bufferline
 require("bufferline").setup{}
 
@@ -141,7 +142,6 @@ require("nvim-treesitter.configs").setup({
 require('gitsigns').setup()
 
 vim.cmd('set shell=/usr/bin/zsh')
-vim.cmd('colorscheme gruvbox')
 vim.g.clipboard = {
 	name = "xsel",
 	copy = {
