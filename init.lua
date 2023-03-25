@@ -15,7 +15,6 @@ require('plugins')
 require('keymaps')
 
 -- bufferline
-vim.opt.termguicolors = true
 require("bufferline").setup{}
 
 -- nvim lsp start
