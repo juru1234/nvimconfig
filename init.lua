@@ -53,7 +53,7 @@ cmp.setup {
       behavior = cmp.ConfirmBehavior.Replace,
       select = true,
     },
-    ['<Tab>'] = cmp.mapping(function(fallback)
+    ["TAB"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
       elseif luasnip.expand_or_jumpable() then
@@ -62,7 +62,7 @@ cmp.setup {
         fallback()
       end
     end, { 'i', 's' }),
-    ['<S-Tab>'] = cmp.mapping(function(fallback)
+    ["S-TAB"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_prev_item()
       elseif luasnip.jumpable(-1) then
@@ -143,16 +143,16 @@ require('gitsigns').setup()
 
 vim.cmd('set shell=/usr/bin/zsh')
 vim.g.clipboard = {
-	name = "xsel",
-	copy = {
-		["+"] = "xsel -i -b",
-		["*"] = "xsel -i -p",
-	},
-	paste = {
-		["+"] = "xsel -o -b",
-		["*"] = "xsel -o -b",
-	},
-	cache_enabled = 1,
+       name = "xsel",
+       copy = {
+               ["+"] = "xsel -i -b",
+               ["*"] = "xsel -i -p",
+       },
+       paste = {
+               ["+"] = "xsel -o -b",
+               ["*"] = "xsel -o -b",
+       },
+       cache_enabled = 1,
 }
 vim.opt.clipboard = "unnamedplus"
 vim.cmd('set list')
