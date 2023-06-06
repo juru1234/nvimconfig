@@ -142,23 +142,12 @@ require("nvim-treesitter.configs").setup({
 require('gitsigns').setup()
 
 vim.cmd('set shell=/usr/bin/zsh')
-vim.g.clipboard = {
-       name = "xsel",
-       copy = {
-               ["+"] = "xsel -i -b",
-               ["*"] = "xsel -i -p",
-       },
-       paste = {
-               ["+"] = "xsel -o -b",
-               ["*"] = "xsel -o -b",
-       },
-       cache_enabled = 1,
-}
-vim.opt.clipboard = "unnamedplus"
 vim.cmd('set list')
 vim.cmd('set listchars=tab:*\\ ,eol:¬,trail:~')
 vim.wo.number = true
 vim.wo.relativenumber = true
 
-
+vim.keymap.set('n', '<leader>c', require('osc52').copy_operator, {expr = true})
+vim.keymap.set('n', '<leader>cc', '<leader>c_', {remap = true})
+vim.keymap.set('v', '<leader>c', require('osc52').copy_visual)
 
