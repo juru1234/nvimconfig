@@ -170,3 +170,5 @@ vim.g.clipboard = {
 vim.keymap.set('n', '<leader>c', '"+y')
 vim.keymap.set('n', '<leader>cc', '"+yy')
 vim.opt.clipboard = "unnamedplus"
+
+vim.cmd('autocmd BufEnter,BufNew term://* startinsert')
