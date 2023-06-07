@@ -91,7 +91,7 @@ require('lualine').setup {
     component_separators = { left = '', right = ''},
     section_separators = { left = '', right = ''},
     disabled_filetypes = {
-      statusline = {},
+      statusline = { 'terminal' },
       winbar = {},
     },
     ignore_focus = {},
@@ -172,4 +172,5 @@ vim.keymap.set('n', '<leader>cc', '"+yy')
 vim.opt.clipboard = "unnamedplus"
 
 vim.cmd('autocmd BufEnter,BufNew term://* startinsert')
+vim.cmd('autocmd BufEnter,BufNew term://* set laststatus=0')
 vim.cmd('autocmd TermOpen * setlocal nonumber norelativenumber')
