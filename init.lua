@@ -35,6 +35,7 @@ end
 
 -- luasnip (used by nvim-cmp)
 local luasnip = require 'luasnip'
+require("luasnip.loaders.from_vscode").lazy_load()
 
 -- nvim-cmp setup (better completion than default nvim completion)
 local cmp = require 'cmp'

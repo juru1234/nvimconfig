@@ -3,7 +3,10 @@ require("lazy").setup({
 	{url = "https://github.com/neovim/nvim-lspconfig"},
 	{url = 'https://github.com/hrsh7th/nvim-cmp'}, -- Autocompletion plugin
 	{url = 'https://github.com/hrsh7th/cmp-nvim-lsp'}, -- LSP source for nvim-cmp
-	{url = 'https://github.com/L3MON4D3/LuaSnip'}, -- LuaSnip plugin (used by cmp)
+	{
+		url = 'https://github.com/L3MON4D3/LuaSnip',
+		dependencies = { "https://github.com/rafamadriz/friendly-snippets" },
+	}, -- LuaSnip plugin (used by cmp)
 	{url = 'https://github.com/saadparwaiz1/cmp_luasnip'}, -- LuaSnip for nvim-cmp
 	{url = "https://github.com/morhetz/gruvbox"},
 	{url = "https://github.com/nvim-telescope/telescope.nvim", tag = '0.1.1',
