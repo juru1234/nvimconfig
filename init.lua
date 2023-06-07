@@ -142,7 +142,7 @@ require("nvim-treesitter.configs").setup({
 require('gitsigns').setup()
 require("toggleterm").setup{
   open_mapping = [[<c-e>]],
-  direction = 'float',
+  direction = 'horizontal',
   start_in_insert = true,
 }
 
