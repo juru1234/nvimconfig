@@ -36,7 +36,7 @@ end
 -- luasnip (used by nvim-cmp)
 local luasnip = require 'luasnip'
 
--- nvim-cmp setup
+-- nvim-cmp setup (better completion than default nvim completion)
 local cmp = require 'cmp'
 cmp.setup {
   snippet = {
