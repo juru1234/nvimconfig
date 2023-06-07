@@ -140,6 +140,7 @@ require("nvim-treesitter.configs").setup({
 })
 
 require('gitsigns').setup()
+require("toggleterm").setup()
 
 vim.cmd('set shell=/usr/bin/zsh')
 vim.cmd('set list')
