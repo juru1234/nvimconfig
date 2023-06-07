@@ -172,3 +172,4 @@ vim.keymap.set('n', '<leader>cc', '"+yy')
 vim.opt.clipboard = "unnamedplus"
 
 vim.cmd('autocmd BufEnter,BufNew term://* startinsert')
+vim.cmd('autocmd TermOpen * setlocal nonumber norelativenumber')

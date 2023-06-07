@@ -38,10 +38,10 @@ map('n', '<leader>tk', '<C-w>t<C-w>K') -- change vertical to horizontal
 map('n', '<leader>th', '<C-w>t<C-w>H') -- change horizontal to vertical
 
 -- Move around splits using Ctrl + {h,j,k,l}
-map('n', '<C-h>', '<C-w>h')
-map('n', '<C-j>', '<C-w>j')
-map('n', '<C-k>', '<C-w>k')
-map('n', '<C-l>', '<C-w>l')
+map('n', '<C-left>', '<C-w>h')
+map('n', '<C-down>', '<C-w>j')
+map('n', '<C-up>', '<C-w>k')
+map('n', '<C-right>', '<C-w>l')
 
 -- Reload configuration without restart nvim
 map('n', '<leader>r', ':so %<CR>')
@@ -59,10 +59,10 @@ map('n', '<leader>q', ':qa!<CR>')
 -- Terminal mappings
 map('n', '<C-t>', ':Term<CR>', { noremap = true })  -- open
 map('t', '<Esc>', '<C-\\><C-n>')                    -- exit
-map('t', '<C-h>', '<C-\\><C-n><C-w>h')
-map('t', '<C-j>', '<C-\\><C-n><C-w>j')
-map('t', '<C-k>', '<C-\\><C-n><C-w>k')
-map('t', '<C-l>', '<C-\\><C-n><C-w>l')
+map('t', '<C-left>', '<C-\\><C-n><C-w>h')
+map('t', '<C-down>', '<C-\\><C-n><C-w>j')
+map('t', '<C-up>', '<C-\\><C-n><C-w>k')
+map('t', '<C-right>', '<C-\\><C-n><C-w>l')
 
 -- bufferline
 vim.keymap.set('n', '<Tab>', '<CMD>BufferLineCycleNext<CR>')
