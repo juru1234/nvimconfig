@@ -34,7 +34,6 @@ for _, lsp in ipairs(servers) do
 end
 
 -- luasnip (used by nvim-cmp)
-local luasnip = require 'luasnip'
 require("luasnip.loaders.from_vscode").lazy_load()
 require("luasnip.loaders.from_vscode").lazy_load({ paths = { "./snippets" } })
 
