@@ -1,3 +1,5 @@
+-------------------------------------------------------------------
+-- Ensure that the lazy.nvim plugin manager is installed
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -10,21 +12,31 @@ if not vim.loop.fs_stat(lazypath) then
   })
 end
 vim.opt.rtp:prepend(lazypath)
+-------------------------------------------------------------------
 
+-------------------------------------------------------------------
+-- Install Plugins and import keymaps
+-- Both located in ~/.config/nvim/lua
 require('plugins')
 require('keymaps')
+-------------------------------------------------------------------
 
+-------------------------------------------------------------------
+-- Use the gruvbox color scheme
 vim.cmd('colorscheme gruvbox')
--- bufferline
-require("bufferline").setup{}
+-------------------------------------------------------------------
 
--- nvim lsp start
--- Add additional capabilities supported by nvim-cmp
+-------------------------------------------------------------------
+-- Show Buffers as tabs on top
+require("bufferline").setup{}
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+-- Enable the LSP and use it with nvim-cmp
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 local lspconfig = require('lspconfig')
 
--- Enable some language servers with the additional completion capabilities offered by nvim-cmp
 local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver' }
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
@@ -32,12 +44,18 @@ for _, lsp in ipairs(servers) do
     capabilities = capabilities,
   }
 end
+-------------------------------------------------------------------
 
--- luasnip (used by nvim-cmp)
+-------------------------------------------------------------------
+-- LuaSnip provides default VSCode code snippets and
+-- own ones located in ~/.config/nvim/snippets
 require("luasnip.loaders.from_vscode").lazy_load()
 require("luasnip.loaders.from_vscode").lazy_load({ paths = { "./snippets" } })
+-------------------------------------------------------------------
 
--- nvim-cmp setup (better completion than default nvim completion)
+-------------------------------------------------------------------
+-- nvim-cmp: completion engine plugin for neovim
+-- used by LSP and LuaSnip
 local cmp = require 'cmp'
 cmp.setup {
   snippet = {
@@ -78,19 +96,31 @@ cmp.setup {
     { name = 'luasnip' },
   },
 }
+-------------------------------------------------------------------
 
--- nvim lsp end
+-------------------------------------------------------------------
+-- A super powerful autopair plugin
+-- Automatically closes brackets and so on...
 require('nvim-autopairs').setup({
   disable_filetype = { "TelescopePrompt" , "vim" },
 })
+-------------------------------------------------------------------
 
--- lualine start
+-------------------------------------------------------------------
+-- A blazing fast and easy to configure Neovim statusline
+-- written in Lua
 require('lualine').setup()
--- end lualine
+-------------------------------------------------------------------
 
+-------------------------------------------------------------------
+-- Show the status of the LSP bottom right
 require"fidget".setup{}
+-------------------------------------------------------------------
 
+-------------------------------------------------------------------
+-- File Explorer
 require("nvim-tree").setup()
+-------------------------------------------------------------------
 
 -------------------------------------------------------------------
 -- Plugin that highlights code in color
@@ -120,12 +150,6 @@ require("toggleterm").setup{
   start_in_insert = true,
 }
 -------------------------------------------------------------------
-
-vim.cmd('set shell=/usr/bin/zsh')
-vim.cmd('set list')
-vim.cmd('set listchars=tab:*\\ ,eol:¬,trail:~')
-vim.wo.number = true
-vim.wo.relativenumber = true
 
 -------------------------------------------------------------------
 -- Use nvim-osc52 as the default clipboard provider
@@ -162,3 +186,9 @@ vim.cmd('autocmd BufEnter,BufNew term://* startinsert')
 vim.cmd('autocmd BufEnter,BufNew term://* set laststatus=0')
 vim.cmd('autocmd TermOpen * setlocal nonumber norelativenumber')
 ------------------------------------------------------------------
+
+vim.cmd('set shell=/usr/bin/zsh')
+vim.cmd('set list')
+vim.cmd('set listchars=tab:*\\ ,eol:¬,trail:~')
+vim.wo.number = true
+vim.wo.relativenumber = true
