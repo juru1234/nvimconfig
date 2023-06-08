@@ -92,21 +92,34 @@ require"fidget".setup{}
 
 require("nvim-tree").setup()
 
+-------------------------------------------------------------------
+-- Plugin that highlights code in color
 require("nvim-treesitter.configs").setup({
-    ensure_installed = { "javascript", "typescript", "lua", "vim", "json", "html", "rust", "tsx" },
+    ensure_installed = { "c", "javascript", "typescript", 
+    	"lua", "vim", "json", "html", "rust", "tsx" },
     sync_install = false,
     auto_install = true,
     highlight = {
         enable = true,
     },
 })
+-------------------------------------------------------------------
 
+-------------------------------------------------------------------
+-- Plugin that shows new Git lines in color
+-- on the left
 require('gitsigns').setup()
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+--  A horizontal terminal can be toggled by
+--  pressing Ctrl+e
 require("toggleterm").setup{
   open_mapping = [[<c-e>]],
   direction = 'horizontal',
   start_in_insert = true,
 }
+-------------------------------------------------------------------
 
 vim.cmd('set shell=/usr/bin/zsh')
 vim.cmd('set list')
@@ -114,6 +127,11 @@ vim.cmd('set listchars=tab:*\\ ,eol:¬,trail:~')
 vim.wo.number = true
 vim.wo.relativenumber = true
 
+-------------------------------------------------------------------
+-- Use nvim-osc52 as the default clipboard provider
+-- If you use a terminal that supports the OSC52 escape
+-- sequence everything that you delete and yank
+-- will be in the system clipboard
 local function copy(lines, _)
   require('osc52').copy(table.concat(lines, '\n'))
 end
@@ -127,12 +145,13 @@ vim.g.clipboard = {
   copy = {['+'] = copy, ['*'] = copy},
   paste = {['+'] = paste, ['*'] = paste},
 }
-
--- Now the '+' register will copy to system clipboard using OSC52
-vim.keymap.set('n', '<leader>c', '"+y')
-vim.keymap.set('n', '<leader>cc', '"+yy')
 vim.opt.clipboard = "unnamedplus"
+------------------------------------------------------------------
 
+------------------------------------------------------------------
+-- Set Terminal automatically to insert mode
+-- and hide line numbers in terminal mode
 vim.cmd('autocmd BufEnter,BufNew term://* startinsert')
 vim.cmd('autocmd BufEnter,BufNew term://* set laststatus=0')
 vim.cmd('autocmd TermOpen * setlocal nonumber norelativenumber')
+------------------------------------------------------------------
