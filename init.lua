@@ -130,8 +130,9 @@ vim.wo.relativenumber = true
 -------------------------------------------------------------------
 -- Use nvim-osc52 as the default clipboard provider
 -- If you use a terminal that supports the OSC52 escape
--- sequence everything that you delete and yank
--- will be in the system clipboard
+-- sequence (e.g. Alacritty on Linux or iTerm2 on macOS)
+-- everything that you delete and yank will be copied
+-- to the system clipboard
 require('osc52').setup {
   max_length = 0,      -- Maximum length of selection (0 for no limit)
   silent     = true,  -- Disable message on successful copy
