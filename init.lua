@@ -132,6 +132,12 @@ vim.wo.relativenumber = true
 -- If you use a terminal that supports the OSC52 escape
 -- sequence everything that you delete and yank
 -- will be in the system clipboard
+require('osc52').setup {
+  max_length = 0,      -- Maximum length of selection (0 for no limit)
+  silent     = true,  -- Disable message on successful copy
+  trim       = false,  -- Trim surrounding whitespaces before copy
+}
+
 local function copy(lines, _)
   require('osc52').copy(table.concat(lines, '\n'))
 end
