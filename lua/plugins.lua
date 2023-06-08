@@ -27,5 +27,6 @@ require("lazy").setup({
 	{url = 'https://github.com/ojroques/nvim-osc52'},
 	{url = 'https://github.com/famiu/bufdelete.nvim'},
 	{url = 'https://github.com/akinsho/toggleterm.nvim'},
+	{url = 'https://github.com/numToStr/Comment.nvim'},
 	
 })

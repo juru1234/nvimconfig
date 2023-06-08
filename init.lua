@@ -179,6 +179,8 @@ vim.g.clipboard = {
 vim.opt.clipboard = "unnamedplus"
 ------------------------------------------------------------------
 
+require('Comment').setup()
+
 ------------------------------------------------------------------
 -- Set Terminal automatically to insert mode
 -- and hide line numbers in terminal mode
