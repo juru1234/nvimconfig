@@ -186,7 +186,7 @@ require('Comment').setup()
 -- and hide line numbers in terminal mode
 vim.cmd('autocmd BufEnter,BufNew term://* startinsert')
 vim.cmd('autocmd BufEnter,BufNew term://* set laststatus=0')
-vim.cmd('autocmd TermOpen * setlocal nonumber norelativenumber')
+vim.cmd('autocmd TermOpen * setlocal nonumber norelativenumber nobuflisted')
 ------------------------------------------------------------------
 
 vim.cmd('set shell=/usr/bin/zsh')
