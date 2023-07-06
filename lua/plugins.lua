@@ -9,7 +9,7 @@ require("lazy").setup({
 	}, -- LuaSnip plugin (used by cmp)
 	{url = 'https://github.com/saadparwaiz1/cmp_luasnip'}, -- LuaSnip for nvim-cmp
 	{url = "https://github.com/morhetz/gruvbox"},
-	{url = "https://github.com/nvim-telescope/telescope.nvim", tag = '0.1.1',
+	{url = "https://github.com/nvim-telescope/telescope.nvim",
       		dependencies = { url = "https://github.com/nvim-lua/plenary.nvim"}},
 	{url = "https://github.com/akinsho/bufferline.nvim",
 		requires = { url = "nvim-tree/nvim-web-devicons"}},

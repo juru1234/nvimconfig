@@ -45,10 +45,10 @@ for _, lsp in ipairs(servers) do
   }
 end
 -------------------------------------------------------------------
-
 -------------------------------------------------------------------
 -- LuaSnip provides default VSCode code snippets and
 -- own ones located in ~/.config/nvim/snippets
+local luasnip = require('luasnip')
 require("luasnip.loaders.from_vscode").lazy_load()
 require("luasnip.loaders.from_vscode").lazy_load({ paths = { "./snippets" } })
 -------------------------------------------------------------------
