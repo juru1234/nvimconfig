@@ -23,7 +23,7 @@ require("lazy").setup({
 		config = function() require("nvim-autopairs").setup {} end},
 	{url = 'https://github.com/nvim-tree/nvim-tree.lua'},
 	{url = 'https://github.com/lewis6991/gitsigns.nvim'},
-	{url = 'https://github.com/j-hui/fidget.nvim'}, -- Show LSP info bottom right
+	{url = 'https://github.com/j-hui/fidget.nvim', tag = "legacy"}, -- Show LSP info bottom right
 	{url = 'https://github.com/ojroques/nvim-osc52'},
 	{url = 'https://github.com/famiu/bufdelete.nvim'},
 	{url = 'https://github.com/akinsho/toggleterm.nvim'},
