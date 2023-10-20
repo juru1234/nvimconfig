@@ -112,7 +112,14 @@ require('nvim-autopairs').setup({
 -------------------------------------------------------------------
 -- A blazing fast and easy to configure Neovim statusline
 -- written in Lua
-require('lualine').setup()
+require('lualine').setup{
+	options = {
+		icons_enabled = false,
+		theme = 'onedark',
+		component_separators = '|',
+		section_separators = '',
+	}
+}
 -------------------------------------------------------------------
 
 -------------------------------------------------------------------
