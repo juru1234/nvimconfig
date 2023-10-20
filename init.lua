@@ -24,7 +24,8 @@ require('keymaps')
 -------------------------------------------------------------------
 -- Use the onedark color scheme
 require('onedark').setup {
-	style = 'dark'
+	style = 'dark',
+	transparent = true,
 }
 require('onedark').load()
 -------------------------------------------------------------------
