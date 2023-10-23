@@ -42,11 +42,27 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 local lspconfig = require('lspconfig')
 
 local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver' }
+
+local rust_analyzer_settings = {
+        ["rust-analyzer"] = {
+            check = {
+                command = "clippy",
+            },
+	}
+}
+
 for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
-    -- on_attach = my_custom_on_attach,
-    capabilities = capabilities,
-  }
+	if lsp == "rust_analyzer" then
+		lspconfig[lsp].setup {
+			capabilities = capabilities,
+			on_attach = on_attach,
+			settings = rust_analyzer_settings,
+		}
+	else
+		lspconfig[lsp].setup {
+			capabilities = capabilities,
+		}
+	end
 end
 -------------------------------------------------------------------
 -------------------------------------------------------------------
