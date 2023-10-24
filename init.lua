@@ -22,12 +22,10 @@ require('keymaps')
 -------------------------------------------------------------------
 
 -------------------------------------------------------------------
--- Use the onedark color scheme
-require('onedark').setup {
-	style = 'dark',
-	transparent = true,
-}
+-- Use the gruvbox scheme
 require('onedark').load()
+vim.o.background = "dark" -- or "light" for light mode
+vim.cmd([[colorscheme gruvbox]])
 -------------------------------------------------------------------
 
 -------------------------------------------------------------------
