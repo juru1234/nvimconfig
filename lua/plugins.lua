@@ -30,5 +30,8 @@ require("lazy").setup({
 	{url = 'https://github.com/numToStr/Comment.nvim'},
 	{url = 'https://github.com/roxma/vim-tmux-clipboard'},
 	{url = 'https://github.com/ggandor/leap.nvim'},
-	
+	{url = 'https://github.com/m4xshen/hardtime.nvim',
+		dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+		opts = {}
+	},
 })
