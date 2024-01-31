@@ -179,6 +179,9 @@ require("toggleterm").setup{
 -------------------------------------------------------------------
 
 require('leap').create_default_mappings()
+vim.keymap.set('n', 's', function ()
+  require('leap').leap { target_windows = { vim.api.nvim_get_current_win() } }
+end)
 -------------------------------------------------------------------
 -- Use nvim-osc52 as the default clipboard provider
 -- If you use a terminal that supports the OSC52 escape
