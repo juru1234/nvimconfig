@@ -29,5 +29,6 @@ require("lazy").setup({
 	{url = 'https://github.com/akinsho/toggleterm.nvim'},
 	{url = 'https://github.com/numToStr/Comment.nvim'},
 	{url = 'https://github.com/roxma/vim-tmux-clipboard'},
+	{url = 'https://github.com/ggandor/leap.nvim'},
 	
 })

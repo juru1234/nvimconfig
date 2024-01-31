@@ -178,6 +178,7 @@ require("toggleterm").setup{
 }
 -------------------------------------------------------------------
 
+require('leap').create_default_mappings()
 -------------------------------------------------------------------
 -- Use nvim-osc52 as the default clipboard provider
 -- If you use a terminal that supports the OSC52 escape
