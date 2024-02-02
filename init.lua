@@ -169,13 +169,6 @@ require('gitsigns').setup()
 -------------------------------------------------------------------
 
 -------------------------------------------------------------------
---  A horizontal terminal can be toggled by
---  pressing Ctrl+e
-require("toggleterm").setup{
-  open_mapping = [[<c-e>]],
-  direction = 'horizontal',
-  start_in_insert = true,
-}
 -------------------------------------------------------------------
 
 require('leap').create_default_mappings()

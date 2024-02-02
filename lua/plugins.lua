@@ -26,12 +26,25 @@ require("lazy").setup({
 	{url = 'https://github.com/j-hui/fidget.nvim', tag = "legacy"}, -- Show LSP info bottom right
 	{url = 'https://github.com/ojroques/nvim-osc52'},
 	{url = 'https://github.com/famiu/bufdelete.nvim'},
-	{url = 'https://github.com/akinsho/toggleterm.nvim'},
 	{url = 'https://github.com/numToStr/Comment.nvim'},
 	{url = 'https://github.com/roxma/vim-tmux-clipboard'},
 	{url = 'https://github.com/ggandor/leap.nvim'},
-	{url = 'https://github.com/m4xshen/hardtime.nvim',
+	{
+		"m4xshen/hardtime.nvim",
 		dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
 		opts = {}
 	},
+	{
+		"folke/which-key.nvim",
+		event = "VeryLazy",
+		init = function()
+			vim.o.timeout = true
+			vim.o.timeoutlen = 300
+		end,
+		opts = {
+			-- your configuration comes here
+			-- or leave it empty to use the default settings
+			-- refer to the configuration section below
+		}
+	}
 })
